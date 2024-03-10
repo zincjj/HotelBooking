@@ -15,6 +15,7 @@ public class Halcyon extends javax.swing.JFrame {
      */
     public Halcyon() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
