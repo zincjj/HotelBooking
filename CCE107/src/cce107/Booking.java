@@ -4,12 +4,16 @@
  */
 package cce107;
 
+import java.util.Date;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author chari
  */
 public class Booking extends javax.swing.JFrame {
-
+    private Date checkInDate;
+    private Date checkOutDate;
     /**
      * Creates new form Booking
      */
@@ -27,38 +31,157 @@ public class Booking extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        Room1 = new javax.swing.JLabel();
+        jButtonBook1 = new javax.swing.JButton();
+        jPanel11 = new javax.swing.JPanel();
+        Room2 = new javax.swing.JLabel();
+        jButtonBook2 = new javax.swing.JButton();
+        jPanel12 = new javax.swing.JPanel();
+        Room3 = new javax.swing.JLabel();
+        jButtonBook3 = new javax.swing.JButton();
+        jPanel13 = new javax.swing.JPanel();
+        Room4 = new javax.swing.JLabel();
+        jButtonBook4 = new javax.swing.JButton();
+        jPanel14 = new javax.swing.JPanel();
+        Room5 = new javax.swing.JLabel();
+        jButtonBook5 = new javax.swing.JButton();
         txtHalcyonHotel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jDateChooser1 = new com.toedter.calendar.JDateChooser();
-        jDateChooser2 = new com.toedter.calendar.JDateChooser();
+        jDateChooserCheckin = new com.toedter.calendar.JDateChooser();
+        jDateChooserCheckout = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jSpinner2 = new javax.swing.JSpinner();
-        jSpinner3 = new javax.swing.JSpinner();
+        jSpinnerAdult = new javax.swing.JSpinner();
+        jSpinnerChildren = new javax.swing.JSpinner();
+        jSpinnerRooms = new javax.swing.JSpinner();
         jLabel3 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        jButtonSearch = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel5.setOpaque(false);
+        jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel6.setOpaque(false);
+        jPanel6.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Room1.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 25)); // NOI18N
+        jPanel6.add(Room1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 324, 50));
+
+        jButtonBook1.setText("Book Now");
+        jButtonBook1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBook1ActionPerformed(evt);
+            }
+        });
+        jPanel6.add(jButtonBook1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, -1));
+
+        jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 850, 50));
+
+        jPanel11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel11.setOpaque(false);
+        jPanel11.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Room2.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 25)); // NOI18N
+        jPanel11.add(Room2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 324, 50));
+
+        jButtonBook2.setText("Book Now");
+        jButtonBook2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBook2ActionPerformed(evt);
+            }
+        });
+        jPanel11.add(jButtonBook2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, -1));
+
+        jPanel5.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 850, -1));
+
+        jPanel12.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel12.setOpaque(false);
+        jPanel12.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Room3.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 25)); // NOI18N
+        jPanel12.add(Room3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 324, 50));
+
+        jButtonBook3.setText("Book Now");
+        jButtonBook3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBook3ActionPerformed(evt);
+            }
+        });
+        jPanel12.add(jButtonBook3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, -1));
+
+        jPanel5.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 850, -1));
+
+        jPanel13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel13.setOpaque(false);
+        jPanel13.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Room4.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 25)); // NOI18N
+        jPanel13.add(Room4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 324, 50));
+
+        jButtonBook4.setText("Book Now");
+        jButtonBook4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBook4ActionPerformed(evt);
+            }
+        });
+        jPanel13.add(jButtonBook4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, -1));
+
+        jPanel5.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 850, -1));
+
+        jPanel14.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jPanel14.setOpaque(false);
+        jPanel14.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        Room5.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 25)); // NOI18N
+        jPanel14.add(Room5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 324, 50));
+
+        jButtonBook5.setText("Book Now");
+        jButtonBook5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButtonBook5ActionPerformed(evt);
+            }
+        });
+        jPanel14.add(jButtonBook5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, -1));
+
+        jPanel5.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 850, -1));
+
+        getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 900, 310));
+
         txtHalcyonHotel.setFont(new java.awt.Font("Abril Fatface", 0, 50)); // NOI18N
         txtHalcyonHotel.setForeground(new java.awt.Color(103, 93, 80));
         txtHalcyonHotel.setText("Halcyon Hotel");
-        getContentPane().add(txtHalcyonHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, -1, -1));
+        getContentPane().add(txtHalcyonHotel, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 20, 320, 70));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setOpaque(false);
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setOpaque(false);
+
+        jDateChooserCheckin.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jDateChooserCheckinPropertyChange(evt);
+            }
+        });
+
+        jDateChooserCheckout.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jDateChooserCheckoutPropertyChange(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Sitka Text", 3, 18)); // NOI18N
         jLabel4.setText("Check-out Date");
@@ -72,11 +195,11 @@ public class Booking extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jDateChooserCheckin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
-                        .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jDateChooserCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addContainerGap(24, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -89,7 +212,7 @@ public class Booking extends javax.swing.JFrame {
                     .addContainerGap(301, Short.MAX_VALUE)))
         );
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jDateChooser1, jDateChooser2});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jDateChooserCheckin, jDateChooserCheckout});
 
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -98,8 +221,8 @@ public class Booking extends javax.swing.JFrame {
                 .addComponent(jLabel4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateChooser2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooser1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateChooserCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jDateChooserCheckin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel2Layout.createSequentialGroup()
@@ -108,7 +231,7 @@ public class Booking extends javax.swing.JFrame {
                     .addContainerGap(42, Short.MAX_VALUE)))
         );
 
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jDateChooser1, jDateChooser2});
+        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jDateChooserCheckin, jDateChooserCheckout});
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.setOpaque(false);
@@ -133,19 +256,19 @@ public class Booking extends javax.swing.JFrame {
                         .addComponent(jLabel3))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jSpinnerAdult, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSpinnerChildren, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinnerRooms, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(29, 29, 29))
         );
 
-        jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jSpinner1, jSpinner2, jSpinner3});
+        jPanel4Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jSpinnerAdult, jSpinnerChildren, jSpinnerRooms});
 
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -157,22 +280,23 @@ public class Booking extends javax.swing.JFrame {
                     .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSpinnerAdult, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinnerChildren, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinnerRooms, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25))
         );
 
-        jPanel4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jSpinner1, jSpinner2, jSpinner3});
+        jPanel4Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jSpinnerAdult, jSpinnerChildren, jSpinnerRooms});
 
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setOpaque(false);
 
-        jButton1.setBackground(new java.awt.Color(243, 222, 186));
-        jButton1.setText("Check");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        jButtonSearch.setBackground(new java.awt.Color(243, 222, 186));
+        jButtonSearch.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
+        jButtonSearch.setText("Check");
+        jButtonSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                jButtonSearchActionPerformed(evt);
             }
         });
 
@@ -182,14 +306,14 @@ public class Booking extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
+                .addComponent(jButtonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jButtonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -230,9 +354,146 @@ public class Booking extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    int adults = (int) jSpinnerAdult.getValue();
+    int children = (int) jSpinnerChildren.getValue();
+    int rooms = (int) jSpinnerRooms.getValue();
+
+    // Validate and adjust spinner values
+    if (adults < 0) {
+        jSpinnerAdult.setValue(0);
+    }
+    if (children < 0) {
+        jSpinnerChildren.setValue(0);
+    }
+    if (rooms < 0) {
+        jSpinnerRooms.setValue(0);
+    }
+
+    int totalPersons = adults + children;
+    
+    jButtonBook1.setEnabled(false);
+    jButtonBook2.setEnabled(false);
+    jButtonBook3.setEnabled(false);
+    jButtonBook4.setEnabled(false);
+    jButtonBook5.setEnabled(false);
+    
+    if (totalPersons == 0){
+        Room1.setText("");
+        Room2.setText("");
+        Room3.setText("");
+        Room4.setText("");
+        Room5.setText("");
+    } else if (totalPersons <= 2) {
+        Room1.setText("Standard Room");
+        Room2.setText("Twin Room");
+        Room3.setText("Family Room");
+        Room4.setText("Business Room");
+        Room5.setText("Luxury Room");
+        jButtonBook1.setEnabled(true);
+        jButtonBook2.setEnabled(true);
+        jButtonBook3.setEnabled(true);
+        jButtonBook4.setEnabled(true);
+        jButtonBook5.setEnabled(true);
+    } else if (totalPersons <= 4) {
+        Room1.setText("Standard Room");
+        Room2.setText("Twin Room");
+        Room3.setText("Family Room");
+        Room4.setText("Business Room");
+        Room5.setText("Luxury Room");
+        jButtonBook2.setEnabled(true);
+        jButtonBook3.setEnabled(true);
+        jButtonBook4.setEnabled(true);
+        jButtonBook5.setEnabled(true);
+    } else if (totalPersons <= 12) {
+        Room1.setText("Standard Room");
+        Room2.setText("Twin Room");
+        Room3.setText("Family Room");
+        Room4.setText("Business Room");
+        Room5.setText("Luxury Room");;
+        jButtonBook5.setEnabled(true);
+    } else if (totalPersons <= 9) {
+        Room1.setText("Standard Room");
+        Room2.setText("Twin Room");
+        Room3.setText("Family Room");
+        Room4.setText("Business Room");
+        Room5.setText("Luxury Room");
+        jButtonBook3.setEnabled(true);
+        jButtonBook4.setEnabled(true);
+        jButtonBook5.setEnabled(true);
+    } else if (totalPersons <=9){
+        Room1.setText("Standard Room");
+        Room2.setText("Twin Room");
+        Room3.setText("Family Room");
+        Room4.setText("Business Room");
+        Room5.setText("Luxury Room");
+        jButtonBook3.setEnabled(true);
+        jButtonBook4.setEnabled(true);
+        jButtonBook5.setEnabled(true);
+    } else {
+        Room1.setText("Standard Room");
+        Room2.setText("Twin Room");
+        Room3.setText("Family Room");
+        Room4.setText("Business Room");
+        Room5.setText("Luxury Room");
+        JOptionPane.showMessageDialog(null,"\tContact Halcyon Hotel\nto arrange your set-up.\n---Thank you---","Contact Halcyon Hotel",JOptionPane.ERROR_MESSAGE);
+    }
+    }//GEN-LAST:event_jButtonSearchActionPerformed
+
+    private void jDateChooserCheckoutPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooserCheckoutPropertyChange
+        // TODO add your handling code here:
+    if (evt.getPropertyName().equals("date")) {
+        Date newCheckoutDate = (Date) evt.getNewValue();
+        if (newCheckoutDate != null && checkInDate != null && newCheckoutDate.before(checkInDate)) {
+            jDateChooserCheckout.setDate(null);
+        } else {
+            checkOutDate = newCheckoutDate;
+        }
+    }
+    }//GEN-LAST:event_jDateChooserCheckoutPropertyChange
+
+    private void jDateChooserCheckinPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooserCheckinPropertyChange
+        // TODO add your handling code here:
+        if (evt.getPropertyName().equals("date")) {
+            if (evt.getNewValue() != null) {
+                checkInDate = (Date) evt.getNewValue();
+                if (checkOutDate != null && checkInDate.after(checkOutDate)) {
+                    jDateChooserCheckin.setDate(null);
+                }
+            }
+        }
+    }//GEN-LAST:event_jDateChooserCheckinPropertyChange
+
+    private void jButtonBook1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new StandardRoom().setVisible(true);
+    }//GEN-LAST:event_jButtonBook1ActionPerformed
+
+    private void jButtonBook2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook2ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new TwinRoom().setVisible(true);
+    }//GEN-LAST:event_jButtonBook2ActionPerformed
+
+    private void jButtonBook3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook3ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new FamilyRoom().setVisible(true);
+    }//GEN-LAST:event_jButtonBook3ActionPerformed
+
+    private void jButtonBook4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook4ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new BusinessRoom().setVisible(true);
+    }//GEN-LAST:event_jButtonBook4ActionPerformed
+
+    private void jButtonBook5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook5ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new LuxuryRoom().setVisible(true);
+    }//GEN-LAST:event_jButtonBook5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,9 +531,19 @@ public class Booking extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private com.toedter.calendar.JDateChooser jDateChooser1;
-    private com.toedter.calendar.JDateChooser jDateChooser2;
+    private javax.swing.JLabel Room1;
+    private javax.swing.JLabel Room2;
+    private javax.swing.JLabel Room3;
+    private javax.swing.JLabel Room4;
+    private javax.swing.JLabel Room5;
+    private javax.swing.JButton jButtonBook1;
+    private javax.swing.JButton jButtonBook2;
+    private javax.swing.JButton jButtonBook3;
+    private javax.swing.JButton jButtonBook4;
+    private javax.swing.JButton jButtonBook5;
+    private javax.swing.JButton jButtonSearch;
+    private com.toedter.calendar.JDateChooser jDateChooserCheckin;
+    private com.toedter.calendar.JDateChooser jDateChooserCheckout;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -281,12 +552,18 @@ public class Booking extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel11;
+    private javax.swing.JPanel jPanel12;
+    private javax.swing.JPanel jPanel13;
+    private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JSpinner jSpinner3;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JSpinner jSpinnerAdult;
+    private javax.swing.JSpinner jSpinnerChildren;
+    private javax.swing.JSpinner jSpinnerRooms;
     private javax.swing.JLabel txtHalcyonHotel;
     // End of variables declaration//GEN-END:variables
 }

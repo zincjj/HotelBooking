@@ -54,8 +54,8 @@ public class Halcyon extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 530, 130, 50));
 
-        pin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/title/pin.png"))); // NOI18N
-        getContentPane().add(pin, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 320, 200, 190));
+        pin.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/title/pin (3).png"))); // NOI18N
+        getContentPane().add(pin, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 230, 230, 260));
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/title/gradient.png"))); // NOI18N
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 610));
