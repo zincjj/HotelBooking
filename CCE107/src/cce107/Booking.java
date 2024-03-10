@@ -80,6 +80,7 @@ public class Booking extends javax.swing.JFrame {
         Room1.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 25)); // NOI18N
         jPanel6.add(Room1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 324, 50));
 
+        jButtonBook1.setBackground(new java.awt.Color(243, 222, 186));
         jButtonBook1.setText("Book Now");
         jButtonBook1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,6 +98,7 @@ public class Booking extends javax.swing.JFrame {
         Room2.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 25)); // NOI18N
         jPanel11.add(Room2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 324, 50));
 
+        jButtonBook2.setBackground(new java.awt.Color(243, 222, 186));
         jButtonBook2.setText("Book Now");
         jButtonBook2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -114,6 +116,7 @@ public class Booking extends javax.swing.JFrame {
         Room3.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 25)); // NOI18N
         jPanel12.add(Room3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 324, 50));
 
+        jButtonBook3.setBackground(new java.awt.Color(243, 222, 186));
         jButtonBook3.setText("Book Now");
         jButtonBook3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,6 +134,7 @@ public class Booking extends javax.swing.JFrame {
         Room4.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 25)); // NOI18N
         jPanel13.add(Room4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 324, 50));
 
+        jButtonBook4.setBackground(new java.awt.Color(243, 222, 186));
         jButtonBook4.setText("Book Now");
         jButtonBook4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -148,6 +152,7 @@ public class Booking extends javax.swing.JFrame {
         Room5.setFont(new java.awt.Font("Arial Rounded MT Bold", 2, 25)); // NOI18N
         jPanel14.add(Room5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 324, 50));
 
+        jButtonBook5.setBackground(new java.awt.Color(243, 222, 186));
         jButtonBook5.setText("Book Now");
         jButtonBook5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
