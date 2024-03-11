@@ -194,8 +194,13 @@ public class Booking extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jDateChooserCheckin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jDateChooserCheckin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(jLabel5)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(18, 18, 18)
@@ -205,11 +210,6 @@ public class Booking extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel4)
                         .addGap(77, 77, 77))))
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(30, 30, 30)
-                    .addComponent(jLabel5)
-                    .addContainerGap(301, Short.MAX_VALUE)))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jDateChooserCheckin, jDateChooserCheckout});
@@ -218,17 +218,14 @@ public class Booking extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel4)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jDateChooserCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jDateChooserCheckin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
-            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addGap(23, 23, 23)
-                    .addComponent(jLabel5)
-                    .addContainerGap(42, Short.MAX_VALUE)))
         );
 
         jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jDateChooserCheckin, jDateChooserCheckout});
@@ -406,13 +403,6 @@ public class Booking extends javax.swing.JFrame {
         jButtonBook3.setEnabled(true);
         jButtonBook4.setEnabled(true);
         jButtonBook5.setEnabled(true);
-    } else if (totalPersons <= 12) {
-        Room1.setText("Standard Room");
-        Room2.setText("Twin Room");
-        Room3.setText("Family Room");
-        Room4.setText("Business Room");
-        Room5.setText("Luxury Room");;
-        jButtonBook5.setEnabled(true);
     } else if (totalPersons <= 9) {
         Room1.setText("Standard Room");
         Room2.setText("Twin Room");
@@ -422,14 +412,20 @@ public class Booking extends javax.swing.JFrame {
         jButtonBook3.setEnabled(true);
         jButtonBook4.setEnabled(true);
         jButtonBook5.setEnabled(true);
-    } else if (totalPersons <=9){
+    } else if (totalPersons <= 12) {
         Room1.setText("Standard Room");
         Room2.setText("Twin Room");
         Room3.setText("Family Room");
         Room4.setText("Business Room");
         Room5.setText("Luxury Room");
-        jButtonBook3.setEnabled(true);
         jButtonBook4.setEnabled(true);
+        jButtonBook5.setEnabled(true);
+    } else if (totalPersons <= 24) {
+        Room1.setText("Standard Room");
+        Room2.setText("Twin Room");
+        Room3.setText("Family Room");
+        Room4.setText("Business Room");
+        Room5.setText("Luxury Room");;
         jButtonBook5.setEnabled(true);
     } else {
         Room1.setText("Standard Room");
@@ -443,6 +439,17 @@ public class Booking extends javax.swing.JFrame {
 
     private void jDateChooserCheckoutPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooserCheckoutPropertyChange
         // TODO add your handling code here:
+        Date currentDate = new Date();
+    
+    // Get the selected check-in date
+        Date selectedCheckinDate = jDateChooserCheckin.getDate();
+    
+    // Validate if the selected check-in date is not before today's date
+        if (selectedCheckinDate != null && selectedCheckinDate.before(currentDate)) {
+            JOptionPane.showMessageDialog(null, "Please select a valid check-in date.", "Invalid Date", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
     if (evt.getPropertyName().equals("date")) {
         Date newCheckoutDate = (Date) evt.getNewValue();
         if (newCheckoutDate != null && checkInDate != null && newCheckoutDate.before(checkInDate)) {
@@ -455,6 +462,13 @@ public class Booking extends javax.swing.JFrame {
 
     private void jDateChooserCheckinPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooserCheckinPropertyChange
         // TODO add your handling code here:
+        Date currentDate = new Date();
+        Date selectedCheckinDate = jDateChooserCheckin.getDate();
+
+        if (selectedCheckinDate != null && selectedCheckinDate.before(currentDate)) {
+            JOptionPane.showMessageDialog(null, "Please select a valid check-in date.", "Invalid Date", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
         if (evt.getPropertyName().equals("date")) {
             if (evt.getNewValue() != null) {
                 checkInDate = (Date) evt.getNewValue();
