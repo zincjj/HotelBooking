@@ -47,6 +47,7 @@ public class Booking extends javax.swing.JFrame {
         jPanel14 = new javax.swing.JPanel();
         Room5 = new javax.swing.JLabel();
         jButtonBook5 = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
         txtHalcyonHotel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
@@ -159,6 +160,16 @@ public class Booking extends javax.swing.JFrame {
         jPanel5.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 850, -1));
 
         getContentPane().add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 260, 900, 310));
+
+        jButton1.setBackground(new java.awt.Color(243, 222, 186));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/title/back.png"))); // NOI18N
+        jButton1.setOpaque(false);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 30, 30));
 
         txtHalcyonHotel.setFont(new java.awt.Font("Abril Fatface", 0, 50)); // NOI18N
         txtHalcyonHotel.setForeground(new java.awt.Color(103, 93, 80));
@@ -509,6 +520,12 @@ public class Booking extends javax.swing.JFrame {
         new LuxuryRoom().setVisible(true);
     }//GEN-LAST:event_jButtonBook5ActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        dispose();
+        new Halcyon().setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -550,6 +567,7 @@ public class Booking extends javax.swing.JFrame {
     private javax.swing.JLabel Room3;
     private javax.swing.JLabel Room4;
     private javax.swing.JLabel Room5;
+    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButtonBook1;
     private javax.swing.JButton jButtonBook2;
     private javax.swing.JButton jButtonBook3;
