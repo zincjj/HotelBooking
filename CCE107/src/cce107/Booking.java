@@ -63,10 +63,10 @@ public class Booking extends javax.swing.JFrame {
         txtHalcyonHotel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jDateChooserCheckin = new com.toedter.calendar.JDateChooser();
-        jDateChooserCheckout = new com.toedter.calendar.JDateChooser();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        jDateChooserCheckout = new com.toedter.calendar.JDateChooser();
+        jDateChooserCheckin = new com.toedter.calendar.JDateChooser();
         jPanel4 = new javax.swing.JPanel();
         jSpinnerAdult = new javax.swing.JSpinner();
         jSpinnerChildren = new javax.swing.JSpinner();
@@ -208,65 +208,29 @@ public class Booking extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setOpaque(false);
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jDateChooserCheckin.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
-            public void propertyChange(java.beans.PropertyChangeEvent evt) {
-                jDateChooserCheckinPropertyChange(evt);
-            }
-        });
+        jLabel4.setFont(new java.awt.Font("Sitka Text", 3, 18)); // NOI18N
+        jLabel4.setText("Check-out Date");
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 20, -1, -1));
+
+        jLabel5.setFont(new java.awt.Font("Sitka Text", 3, 18)); // NOI18N
+        jLabel5.setText("Check-in Date");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 20, -1, -1));
 
         jDateChooserCheckout.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
             public void propertyChange(java.beans.PropertyChangeEvent evt) {
                 jDateChooserCheckoutPropertyChange(evt);
             }
         });
+        jPanel2.add(jDateChooserCheckout, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 40, 160, 30));
 
-        jLabel4.setFont(new java.awt.Font("Sitka Text", 3, 18)); // NOI18N
-        jLabel4.setText("Check-out Date");
-
-        jLabel5.setFont(new java.awt.Font("Sitka Text", 3, 18)); // NOI18N
-        jLabel5.setText("Check-in Date");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jDateChooserCheckin, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addComponent(jLabel5)))
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jDateChooserCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(24, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4)
-                        .addGap(77, 77, 77))))
-        );
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.HORIZONTAL, new java.awt.Component[] {jDateChooserCheckin, jDateChooserCheckout});
-
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jDateChooserCheckout, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jDateChooserCheckin, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-        );
-
-        jPanel2Layout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {jDateChooserCheckin, jDateChooserCheckout});
+        jDateChooserCheckin.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jDateChooserCheckinPropertyChange(evt);
+            }
+        });
+        jPanel2.add(jDateChooserCheckin, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 40, 160, 30));
 
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel4.setOpaque(false);
@@ -292,7 +256,7 @@ public class Booking extends javax.swing.JFrame {
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(jSpinnerAdult, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 52, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jSpinnerChildren, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -325,57 +289,38 @@ public class Booking extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setOpaque(false);
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButtonSearch.setBackground(new java.awt.Color(243, 222, 186));
-        jButtonSearch.setFont(new java.awt.Font("Segoe UI", 2, 12)); // NOI18N
-        jButtonSearch.setText("Check");
+        jButtonSearch.setText("  Check  ");
         jButtonSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButtonSearchActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButtonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, 85, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jButtonSearch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+        jPanel3.add(jButtonSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, 70));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(17, 17, 17)
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 920, 120));
@@ -389,9 +334,110 @@ public class Booking extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jDateChooserCheckoutPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooserCheckoutPropertyChange
+        // TODO add your handling code here:
+        Date currentDate = new Date();
+    
+    // Get the selected check-in date
+        Date selectedCheckinDate = jDateChooserCheckin.getDate();
+    
+    // Validate if the selected check-in date is not before today's date
+        if (selectedCheckinDate != null && selectedCheckinDate.before(currentDate)) {
+            JOptionPane.showMessageDialog(null, "Please select a valid check-in date.", "Invalid Date", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+
+    if (evt.getPropertyName().equals("date")) {
+        Date newCheckoutDate = (Date) evt.getNewValue();
+        if (newCheckoutDate != null && checkInDate != null && newCheckoutDate.before(checkInDate)) {
+            jDateChooserCheckout.setDate(null);
+        } else {
+            checkOutDate = newCheckoutDate;
+        }
+    }
+    }//GEN-LAST:event_jDateChooserCheckoutPropertyChange
+
+    private void jDateChooserCheckinPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooserCheckinPropertyChange
+        // TODO add your handling code here:
+        Date currentDate = new Date();
+        Date selectedCheckinDate = jDateChooserCheckin.getDate();
+
+        if (selectedCheckinDate != null && selectedCheckinDate.before(currentDate)) {
+            JOptionPane.showMessageDialog(null, "Please select a valid check-in date.", "Invalid Date", JOptionPane.ERROR_MESSAGE);
+            return;
+        }
+        if (evt.getPropertyName().equals("date")) {
+            if (evt.getNewValue() != null) {
+                checkInDate = (Date) evt.getNewValue();
+                if (checkOutDate != null && checkInDate.after(checkOutDate)) {
+                    jDateChooserCheckin.setDate(null);
+                }
+            }
+        }
+    }//GEN-LAST:event_jDateChooserCheckinPropertyChange
+
+    private void jButtonBook1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook1ActionPerformed
+        // TODO add your handling code here:
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
+    }//GEN-LAST:event_jButtonBook1ActionPerformed
+
+    private void jButtonBook2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook2ActionPerformed
+        // TODO add your handling code here:
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
+    }//GEN-LAST:event_jButtonBook2ActionPerformed
+
+    private void jButtonBook3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook3ActionPerformed
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
+    }//GEN-LAST:event_jButtonBook3ActionPerformed
+
+    private void jButtonBook4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook4ActionPerformed
+        // TODO add your handling code here:
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
+    }//GEN-LAST:event_jButtonBook4ActionPerformed
+
+    private void jButtonBook5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook5ActionPerformed
+        // TODO add your handling code here:
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
+    }//GEN-LAST:event_jButtonBook5ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void jButtonSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonSearchActionPerformed
         // TODO add your handling code here:
-    int adults = (int) jSpinnerAdult.getValue();
+        int adults = (int) jSpinnerAdult.getValue();
     int children = (int) jSpinnerChildren.getValue();
     int rooms = (int) jSpinnerRooms.getValue();
 
@@ -497,9 +543,7 @@ public class Booking extends javax.swing.JFrame {
         Room5.setText("Luxury Room");
         JOptionPane.showMessageDialog(null,"\tContact Halcyon Hotel\nto arrange your set-up.\n---Thank you---","Contact Halcyon Hotel",JOptionPane.ERROR_MESSAGE);
     }
-    }//GEN-LAST:event_jButtonSearchActionPerformed
-
-    private void jDateChooserCheckoutPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooserCheckoutPropertyChange
+                                            
         // TODO add your handling code here:
         Date currentDate = new Date();
     
@@ -511,94 +555,7 @@ public class Booking extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Please select a valid check-in date.", "Invalid Date", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
-    if (evt.getPropertyName().equals("date")) {
-        Date newCheckoutDate = (Date) evt.getNewValue();
-        if (newCheckoutDate != null && checkInDate != null && newCheckoutDate.before(checkInDate)) {
-            jDateChooserCheckout.setDate(null);
-        } else {
-            checkOutDate = newCheckoutDate;
-        }
-    }
-    }//GEN-LAST:event_jDateChooserCheckoutPropertyChange
-
-    private void jDateChooserCheckinPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateChooserCheckinPropertyChange
-        // TODO add your handling code here:
-        Date currentDate = new Date();
-        Date selectedCheckinDate = jDateChooserCheckin.getDate();
-
-        if (selectedCheckinDate != null && selectedCheckinDate.before(currentDate)) {
-            JOptionPane.showMessageDialog(null, "Please select a valid check-in date.", "Invalid Date", JOptionPane.ERROR_MESSAGE);
-            return;
-        }
-        if (evt.getPropertyName().equals("date")) {
-            if (evt.getNewValue() != null) {
-                checkInDate = (Date) evt.getNewValue();
-                if (checkOutDate != null && checkInDate.after(checkOutDate)) {
-                    jDateChooserCheckin.setDate(null);
-                }
-            }
-        }
-    }//GEN-LAST:event_jDateChooserCheckinPropertyChange
-
-    private void jButtonBook1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook1ActionPerformed
-        // TODO add your handling code here:
-        if (bookedRooms.contains(1)) {
-            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
-        } else {
-            dispose();
-            new StandardRoom().setVisible(true);
-        }
-    }//GEN-LAST:event_jButtonBook1ActionPerformed
-
-    private void jButtonBook2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook2ActionPerformed
-        // TODO add your handling code here:
-        if (bookedRooms.contains(1)) {
-            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
-        } else {
-            dispose();
-            new StandardRoom().setVisible(true);
-        }
-    }//GEN-LAST:event_jButtonBook2ActionPerformed
-
-    private void jButtonBook3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook3ActionPerformed
-        if (bookedRooms.contains(1)) {
-            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
-        } else {
-            dispose();
-            new StandardRoom().setVisible(true);
-        }
-    }//GEN-LAST:event_jButtonBook3ActionPerformed
-
-    private void jButtonBook4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook4ActionPerformed
-        // TODO add your handling code here:
-        if (bookedRooms.contains(1)) {
-            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
-        } else {
-            dispose();
-            new StandardRoom().setVisible(true);
-        }
-    }//GEN-LAST:event_jButtonBook4ActionPerformed
-
-    private void jButtonBook5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook5ActionPerformed
-        // TODO add your handling code here:
-        if (bookedRooms.contains(1)) {
-            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
-        } else {
-            dispose();
-            new StandardRoom().setVisible(true);
-        }
-    }//GEN-LAST:event_jButtonBook5ActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        if (bookedRooms.contains(1)) {
-            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
-        } else {
-            dispose();
-            new StandardRoom().setVisible(true);
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_jButtonSearchActionPerformed
 
     /**
      * @param args the command line arguments
