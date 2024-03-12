@@ -4,7 +4,12 @@
  */
 package cce107;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import javax.swing.JOptionPane;
 
 /**
@@ -12,6 +17,7 @@ import javax.swing.JOptionPane;
  * @author chari
  */
 public class Booking extends javax.swing.JFrame {
+    private List<Integer> bookedRooms = new ArrayList<>();
     private Date checkInDate;
     private Date checkOutDate;
     /**
@@ -20,6 +26,7 @@ public class Booking extends javax.swing.JFrame {
     public Booking() {
         initComponents();
         setLocationRelativeTo(null);
+        loadBookedRoooms();
     }
 
     /**
@@ -35,18 +42,23 @@ public class Booking extends javax.swing.JFrame {
         jPanel6 = new javax.swing.JPanel();
         Room1 = new javax.swing.JLabel();
         jButtonBook1 = new javax.swing.JButton();
+        jlStandardPrice = new javax.swing.JLabel();
         jPanel11 = new javax.swing.JPanel();
         Room2 = new javax.swing.JLabel();
         jButtonBook2 = new javax.swing.JButton();
+        jlTwinPrice = new javax.swing.JLabel();
         jPanel12 = new javax.swing.JPanel();
         Room3 = new javax.swing.JLabel();
         jButtonBook3 = new javax.swing.JButton();
+        jlFamilyPrice = new javax.swing.JLabel();
         jPanel13 = new javax.swing.JPanel();
         Room4 = new javax.swing.JLabel();
         jButtonBook4 = new javax.swing.JButton();
+        jlBusinessPrice = new javax.swing.JLabel();
         jPanel14 = new javax.swing.JPanel();
         Room5 = new javax.swing.JLabel();
         jButtonBook5 = new javax.swing.JButton();
+        jlLuxuryPrice = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         txtHalcyonHotel = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
@@ -89,6 +101,9 @@ public class Booking extends javax.swing.JFrame {
         });
         jPanel6.add(jButtonBook1, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, -1));
 
+        jlStandardPrice.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
+        jPanel6.add(jlStandardPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 20, 60, -1));
+
         jPanel5.add(jPanel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 850, 50));
 
         jPanel11.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -105,6 +120,9 @@ public class Booking extends javax.swing.JFrame {
             }
         });
         jPanel11.add(jButtonBook2, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, -1));
+
+        jlTwinPrice.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
+        jPanel11.add(jlTwinPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 20, 60, -1));
 
         jPanel5.add(jPanel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 850, -1));
 
@@ -123,6 +141,9 @@ public class Booking extends javax.swing.JFrame {
         });
         jPanel12.add(jButtonBook3, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, -1));
 
+        jlFamilyPrice.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
+        jPanel12.add(jlFamilyPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(641, 20, 60, -1));
+
         jPanel5.add(jPanel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 850, -1));
 
         jPanel13.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -140,6 +161,10 @@ public class Booking extends javax.swing.JFrame {
         });
         jPanel13.add(jButtonBook4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, -1));
 
+        jlBusinessPrice.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
+        jlBusinessPrice.setText("a");
+        jPanel13.add(jlBusinessPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 60, -1));
+
         jPanel5.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 850, -1));
 
         jPanel14.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -156,6 +181,9 @@ public class Booking extends javax.swing.JFrame {
             }
         });
         jPanel14.add(jButtonBook5, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, -1));
+
+        jlLuxuryPrice.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
+        jPanel14.add(jlLuxuryPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 60, -1));
 
         jPanel5.add(jPanel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, 850, -1));
 
@@ -376,10 +404,34 @@ public class Booking extends javax.swing.JFrame {
         jSpinnerChildren.setValue(0);
     }
     if (rooms < 0) {
-        jSpinnerRooms.setValue(0);
+        JOptionPane.showMessageDialog(this, "Please select at least 1 room.", "Invalid Input", JOptionPane.ERROR_MESSAGE);
+        return;
     }
 
     int totalPersons = adults + children;
+    
+    int standardRoomPricePerRoom = 5000; // Replace with actual standard room price
+    int twinRoomPricePerRoom = 6500; // Replace with actual twin room price
+    int familyRoomPricePerRoom = 8000; // Replace with actual family room price
+    int businessRoomPricePerRoom = 9500; // Replace with actual business room price
+    int luxuryRoomPricePerRoom = 12000; // Replace with actual luxury room price
+
+    // Calculate total price for each room type
+    int standardRoomPrice = calculatePrice(rooms, checkInDate, checkOutDate, standardRoomPricePerRoom);
+    int twinRoomPrice = calculatePrice(rooms, checkInDate, checkOutDate, twinRoomPricePerRoom);
+    int familyRoomPrice = calculatePrice(rooms, checkInDate, checkOutDate, familyRoomPricePerRoom);
+    int businessRoomPrice = calculatePrice(rooms, checkInDate, checkOutDate, businessRoomPricePerRoom);
+    int luxuryRoomPrice = calculatePrice(rooms, checkInDate, checkOutDate, luxuryRoomPricePerRoom);
+
+    // Update JLabels with calculated prices
+    jlStandardPrice.setText(Integer.toString(standardRoomPrice));
+    jlTwinPrice.setText(Integer.toString(twinRoomPrice));
+    jlFamilyPrice.setText(Integer.toString(familyRoomPrice));
+    jlBusinessPrice.setText(Integer.toString(businessRoomPrice));
+    jlLuxuryPrice.setText(Integer.toString(luxuryRoomPrice));
+
+    // Enable booking buttons based on the total number of persons
+    enableBookingButtons(totalPersons);
     
     jButtonBook1.setEnabled(false);
     jButtonBook2.setEnabled(false);
@@ -492,38 +544,61 @@ public class Booking extends javax.swing.JFrame {
 
     private void jButtonBook1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook1ActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new StandardRoom().setVisible(true);
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
     }//GEN-LAST:event_jButtonBook1ActionPerformed
 
     private void jButtonBook2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook2ActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new TwinRoom().setVisible(true);
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
     }//GEN-LAST:event_jButtonBook2ActionPerformed
 
     private void jButtonBook3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook3ActionPerformed
-        // TODO add your handling code here:
-        dispose();
-        new FamilyRoom().setVisible(true);
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
     }//GEN-LAST:event_jButtonBook3ActionPerformed
 
     private void jButtonBook4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook4ActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new BusinessRoom().setVisible(true);
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
     }//GEN-LAST:event_jButtonBook4ActionPerformed
 
     private void jButtonBook5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonBook5ActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new LuxuryRoom().setVisible(true);
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
     }//GEN-LAST:event_jButtonBook5ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        dispose();
-        new Halcyon().setVisible(true);
+        if (bookedRooms.contains(1)) {
+            JOptionPane.showMessageDialog(this, "This room is already booked for the selected dates.", "Room Unavailable", JOptionPane.ERROR_MESSAGE);
+        } else {
+            dispose();
+            new StandardRoom().setVisible(true);
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -596,6 +671,38 @@ public class Booking extends javax.swing.JFrame {
     private javax.swing.JSpinner jSpinnerAdult;
     private javax.swing.JSpinner jSpinnerChildren;
     private javax.swing.JSpinner jSpinnerRooms;
+    private javax.swing.JLabel jlBusinessPrice;
+    private javax.swing.JLabel jlFamilyPrice;
+    private javax.swing.JLabel jlLuxuryPrice;
+    private javax.swing.JLabel jlStandardPrice;
+    private javax.swing.JLabel jlTwinPrice;
     private javax.swing.JLabel txtHalcyonHotel;
     // End of variables declaration//GEN-END:variables
+
+    private void loadBookedRoooms() {
+        try (BufferedReader reader = new BufferedReader(new FileReader("C:\\Users\\chari\\OneDrive\\NetBeansProject\\HotelBooking\\CCE107\\src\\cce107\\StorageFile.txt"))) {
+            String line;
+            while ((line = reader.readLine()) != null) {
+                bookedRooms.add(Integer.parseInt(line.trim()));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private int calculatePrice(int rooms, Date checkInDate, Date checkOutDate, int pricePerRoom) {
+        long duration = checkOutDate.getTime() - checkInDate.getTime();
+    int nights = (int) (duration / (1000 * 60 * 60 * 24)); // Calculate number of nights
+
+    return rooms * nights * pricePerRoom; // Total price for the room type
+
+}
+
+    private void enableBookingButtons(int totalPersons) {
+        jButtonBook1.setEnabled(totalPersons >= 1);
+        jButtonBook2.setEnabled(totalPersons >= 2);
+        jButtonBook3.setEnabled(totalPersons >= 3);
+        jButtonBook4.setEnabled(totalPersons >= 4);
+        jButtonBook5.setEnabled(totalPersons >= 5);
+    }
 }
