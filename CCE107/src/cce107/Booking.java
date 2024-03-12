@@ -162,7 +162,6 @@ public class Booking extends javax.swing.JFrame {
         jPanel13.add(jButtonBook4, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, -1));
 
         jlBusinessPrice.setFont(new java.awt.Font("Arial", 3, 12)); // NOI18N
-        jlBusinessPrice.setText("a");
         jPanel13.add(jlBusinessPrice, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 20, 60, -1));
 
         jPanel5.add(jPanel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 850, -1));
